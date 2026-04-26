@@ -1,0 +1,37 @@
+
+task.spawn(function()
+    pcall(function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/erewe23/deadrailsring.github.io/refs/heads/main/ringta.lua"))()
+    end)
+end)
+
+
+task.spawn(function()
+    local CoreGui = game:GetService("CoreGui")
+   
+    while task.wait(0.1) do
+        for _, v in pairs(CoreGui:GetDescendants()) do
+       
+            if v:IsA("TextLabel") or v:IsA("TextButton") then
+                local currentText = v.Text:upper() 
+                
+          
+                if currentText:find("RINGTA SCRIPTS") then
+                    v.Text = "🔥 K4TSUKI CHEATS 🔥"
+                end
+                
+                
+                if currentText:find("RINGTA AND BUBLIK6241") or currentText:find("BUBLIK6241") then
+                    v.Text = "Made by K4tsuki - Unstoppable!"
+                end
+                
+                
+                if currentText:find("RINGTA") and not currentText:find("K4TSUKI") then
+                    v.Text = "K4TSUKI"
+                end
+            end
+        end
+    end
+end)
+
+print("👺 K4TSUKI SCANNER ACTIVE - OVERRIDING UI...")
